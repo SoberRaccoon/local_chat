@@ -18,6 +18,18 @@ if (!JavaVersion.current().isCompatibleWith(minimumJavaVersion)) {
     )
 }
 
+tasks.named('build') {
+    doFirst {
+        file('db').mkdirs()
+    }
+}
+
+tasks.named('bootRun') {
+    doFirst {
+        file('db').mkdirs()
+    }
+}
+
 test {
     testLogging {
         events "failed", "passed", "skipped", "standardOut", "standardError"
