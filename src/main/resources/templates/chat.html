@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/chat.css">
+<script type="module" src="js/chat.mjs" defer></script>
+<script type="module" src="js/messages.mjs" defer></script>
+<script type="module" src="js/chat_search.mjs" defer></script>
+<script src="js/main_page.js" defer></script>
+</head>
+<body>
+    <div style="display: flex; flex-direction: row; width: 100%; height: 100%;">
+        <div id="side_bar">
+            <div class="centered_div" style="overflow-y: hidden;">
+                <label>Chats:</label>
+                <ul id="chat_list">
+                </ul>
+            </div>
+            <div class="centered_div">
+                <button class="dark_button" style="margin-bottom: 5px;"
+                    id="new_chat_btn">New chat</button>
+                <div style="margin-bottom: 5px;">
+                    <label id="user_name_display">User Name</label>
+                    <button class="dark_button" id="logout_button">Log out</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="main_conteiner">
+            <!-- Search -->
+            <div id="search">
+                <div style="display: flex; flex-direction: row;"
+                    class="inputbar_conteiner" id="search_bar_container">
+                    <input id="search_input" 
+                        style="font-size: 1cqw;" placeholder="search"/>
+                    <button id="search_enter_button" class="enter_button">↵</button>
+                </div>
+                <div
+                    id="search_suggestions_conteiner">
+                </div>
+            </div>
+
+            <!-- Chat -->
+            <div id="chat_conteiner">
+                <div id="messages_conteiner">
+                </div>
+                <form class="inputbar_conteiner" id="message_input_form">
+                    <input id="message_input" placeholder="message"/>
+                    <button type="submit" class="enter_button" style="margin-right: 10px;">↵</button>
+                </form>
+            </div>
+
+            <!-- Modals -->
+            <div class="overlay"></div>
+            <form id="create_chatroom_form">
+                <label>Create chat room</label>
+                <input id="chat_name" placeholder="chat name"/>
+                <div>
+                    <label> Make Private </label> 
+                    <input id="make_private_checkbox" type="checkbox"/>
+                </div>
+                <input type="password" id="chat_password" style="display: none;" placeholder="chat password"/>
+                <label id="create_chatroom_error" 
+                    style="font-size: 0.8em; color: red;"></label>
+                <button class="dark_button" type="submit">create chat</button>
+            </form>
+            <form id="chat_password_form" style="display: none; text-align: center;">
+                <label>Enter chat password</label>
+                <div class="inputbar_conteiner" style="background-color: var(--primary-dark-color);">
+                    <input type="password" id="password" placeholder="password"/>
+                    <button class="enter_button" style="margin-right: 10px;">↵</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

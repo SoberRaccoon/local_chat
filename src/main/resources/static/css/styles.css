@@ -1,0 +1,28 @@
+
+
+
+:root {
+    --primary-bright-color: #aaaaaa;
+    --primary-dark-color: #484949;
+    --primary-bright-hl-color: #888888;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #484949;
+}
+
+div, form {
+    border-radius: 8px;
+}
+
+.centered_div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
