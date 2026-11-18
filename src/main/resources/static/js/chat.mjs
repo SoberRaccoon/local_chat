@@ -70,6 +70,7 @@ class ChatBar {
             fetch("/leave?chat_name=" + chat_name, {
                 method: "GET",
             });
+            this.clearSelection();
         } else {
             this.switchSelection(chat_list_item, chat_name);
         }
@@ -87,12 +88,13 @@ class ChatBar {
     addNewChat = (chat_name) => {
         if (this.name_list.includes(chat_name)) return;
         this.addChatToList(chat_name);
+        this.name_list.push(chat_name);
     }  
 }
 
 export const chatBar = new ChatBar(); 
 
-chat_list.addEventListener('click', chatBar.selectChat);
+chat_list.addEventListener("click", chatBar.selectChat);
 side_bar.addEventListener("click", chatBar.clearSelection);
 
 
